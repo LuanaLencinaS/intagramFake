@@ -50,7 +50,7 @@
       <div class="card-body">
         <div class="card-itens">
           <div class="likes">
-            <img src="/img/icons/heart.svg">
+            <a href="/publicacao/<%= publication.id %>/like"><img src="/img/icons/heart.svg"></a>
             <b><%= publication.like %> likes</b>
           </div>
           <b>Postado no dia: <%= moment(publication.create_at).format('DD/MM/YYYY') %></b>

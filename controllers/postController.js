@@ -36,6 +36,19 @@ const postController = {
 
     return res.redirect("/home");
   },
+
+  like: async (req, res) => {
+    const { id } = req.params;
+
+    const publicationData = await Publication.findByPk(id);
+
+    // publicationData.like = publicationData.like + 1;
+    publicationData.like++
+
+    await publicationData.save();
+
+    return res.redirect("/home")
+  },
 };
 
 module.exports = postController;

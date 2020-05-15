@@ -20,6 +20,8 @@ router.post("/registro", userController.store);
 router.get("/publicar", auth, postController.create);
 router.post("/publicar", upload.any(), postController.store);
 
+router.get("/publicacao/:id/like", postController.like);
+
 router.post("/comentar/:idPost", commentController.store);
 
 router.get("/home", auth, postController.index);
